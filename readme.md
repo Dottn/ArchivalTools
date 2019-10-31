@@ -9,7 +9,11 @@ This script crawls through the artist page of a specified artist on natalie.mu, 
 The script uses the python modules lxml, yurl, and requests.
 They can be installed by running:
 
-`python -m pip install lxml requests`
+`python -m pip install lxml requests YURL`
+
+Alternatively:
+
+`python -m pip install -r requirements.txt`
 
 ### Usage
 
