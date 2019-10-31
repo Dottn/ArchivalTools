@@ -85,7 +85,7 @@ for i in range(pages):
 
         # For all images in the gallery/article banner/article figure, download the linked resource without the query parameters, i.e. get the original.
         for image in imageList:
-            imageUrl = URL(image[0][0].get(tagProperty)).replace(query='')
+            imageUrl = URL(image[0][0].get(tagProperty)).replace(query='impolicy=')
             try:
                 imageData=requests.get(imageUrl).content
                 filname='{0}/{1}'.format(dirname, basename(imageUrl.path))
