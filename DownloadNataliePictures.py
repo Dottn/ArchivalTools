@@ -85,6 +85,7 @@ for i in range(pages):
 
         # For all images in the gallery/article banner/article figure, download the linked resource without the query parameters, i.e. get the original.
         for image in imageList:
+            # having 'impolicy=' as the url query ensures download of the largest resolution version of the image
             imageUrl = URL(image[0][0].get(tagProperty)).replace(query='impolicy=')
             try:
                 imageData=requests.get(imageUrl).content
