@@ -49,9 +49,9 @@ for i in range(pages):
         dirname=basename(URL(url).path)
 
         print('Article {0}'.format(dirname))
-        input("Press Enter to continue...")
 
         if os.path.exists(dirname):
+            print("Article folder exists")
             continue
         os.mkdir(dirname)
 
@@ -88,7 +88,8 @@ for i in range(pages):
             imageUrl = URL(image[0][0].get(tagProperty)).replace(query='')
             try:
                 imageData=requests.get(imageUrl).content
-                filname='{0}/{2}'.format(dirname, imageUrl.path.split('/')[-1])
+                filname='{0}/{1}'.format(dirname, basename(imageUrl.path))
+                print(imageUrl)
                 print(filname)
                 output=open(filname,'wb')
                 output.write(imageData)
